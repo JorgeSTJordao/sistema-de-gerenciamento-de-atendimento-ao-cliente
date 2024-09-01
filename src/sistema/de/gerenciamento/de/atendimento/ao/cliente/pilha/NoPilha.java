@@ -9,11 +9,13 @@ import java.util.Scanner;
 public class NoPilha {
     
     ElementoPilha elementoPilha;
+    NoPilha anterior;
     NoPilha proximo;
     
     public NoPilha()
     {
         this.elementoPilha = null;
+        this.anterior = null;
         this.proximo = null;
     }
 
@@ -40,6 +42,14 @@ public class NoPilha {
         elementoPilha.setData(data);
     }
 
+    public NoPilha getAnterior(){
+        return anterior;
+    }
+    
+    public void setAnterior(NoPilha anterior){
+        this.anterior = anterior;
+    }
+    
     public NoPilha getProximo() {
         return proximo;
     }
