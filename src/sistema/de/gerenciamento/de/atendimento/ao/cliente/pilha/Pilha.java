@@ -1,9 +1,6 @@
 package sistema.de.gerenciamento.de.atendimento.ao.cliente.pilha;
 
-/**
- *
- * @author jorge
- */
+
 public class Pilha {
     private NoPilha Historico;
     private NoPilha topo;
@@ -39,20 +36,42 @@ public class Pilha {
         }
     }
     
+    //Deletando dados do histórico (top - down)
+    public void deletar (){
+
+        //Condição de parada: o último elemento sempre tem o próximo nó nulo
+        if (Historico == null){
+            System.out.println("Histórico vazio");
+        }
+        else {
+            if (topo.anterior == null){
+                Historico = null;
+                topo = null;
+            } else {
+                NoPilha anterior = topo.anterior;
+                anterior.setProximo(null);
+                topo = anterior;
+            }
+        }       
+    }
+    
     //Imprimindo o histórico 
-    public void imprime(){
+    public void imprimir(){
         NoPilha atual = Historico;
         
-        System.out.print("ID | Descrição | Data");
+        System.out.println("ID | Descrição | Data");
 
-        while (atual != null) {
-            ElementoPilha elemento = atual.getElemento();
+        if (Historico != null){
+            while (atual != null) {
+                ElementoPilha elemento = atual.getElemento();
 
-            System.out.print(elemento.id + " | " + elemento.descricao + " | " + elemento.data);
-            atual= atual.getProximo();
+                System.out.println(elemento.id + " | " + elemento.descricao + " | " + elemento.data);
+                atual= atual.getProximo();
+            }
         }
-        
-        System.out.println("Acabou");
-  
+        else {
+           System.out.println("Histórico vazio");
+        }
     }
+   
 }

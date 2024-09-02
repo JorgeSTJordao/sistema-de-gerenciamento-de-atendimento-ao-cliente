@@ -2,10 +2,7 @@ package sistema.de.gerenciamento.de.atendimento.ao.cliente.pilha;
 
 import java.util.Scanner;
 
-/**
- *
- * @author jorge
- */
+
 public class NoPilha {
     
     ElementoPilha elementoPilha;
@@ -23,23 +20,22 @@ public class NoPilha {
         return elementoPilha;
     }
 
-    public void setElemento(int id) {
-        String descricao;
-        String data;
-        
+    public void setElemento(int id) {         
         Scanner scanner = new Scanner(System.in);
-
-        elementoPilha.setId(id);
+        
+        //Usaremos o nextLine para ler o conteúdo com espaço até que haja um \n (Enter)
         
         System.out.println("Digite a descrição:");
-        descricao = scanner.next(); 
-        
-        elementoPilha.setDescricao(descricao);
-        
+        String descricao = scanner.next(); 
+        descricao+= scanner.nextLine();
+
         System.out.println("Digite a data:");
-        data = scanner.next();
+        String data = scanner.next();
+        data+= scanner.nextLine();
         
-        elementoPilha.setData(data);
+        elementoPilha = new ElementoPilha(descricao, data);
+        elementoPilha.setId(id);
+        
     }
 
     public NoPilha getAnterior(){
