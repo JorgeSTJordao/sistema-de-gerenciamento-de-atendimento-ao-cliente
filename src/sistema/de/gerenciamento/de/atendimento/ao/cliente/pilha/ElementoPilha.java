@@ -16,6 +16,7 @@ public class ElementoPilha {
         return id;
     }
     
+    //Para cada ID deve ser abordada as seguintes condições
     public void setId(int id){
         if (id < 10){
             this.id= "REQ00" + id;
@@ -41,6 +42,6 @@ public class ElementoPilha {
     }
     
     public void setData(String data){
-        this.descricao = data;
+        this.data = data;
     }
 }

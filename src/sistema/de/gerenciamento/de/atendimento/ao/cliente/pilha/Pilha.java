@@ -5,9 +5,13 @@ public class Pilha {
     private NoPilha Historico;
     private NoPilha topo;
     private int ultimoId;
+    private int[] ultimaData;
+    private String[] ultimaDataString;
     
     public Pilha(){
         this.ultimoId = 0;
+        this.ultimaData = new int[]{30, 10, 3, 9, 2024}; //minutos - hora - dia - mês - ano
+        this.ultimaDataString = new String[]{"30", "10", "03", "09", "2024"};
         this.topo = null;
         this.Historico = null;
     }
@@ -15,10 +19,67 @@ public class Pilha {
     
      //Inserindo os nós
     public void inserir (){
+        //Data em String
+        String data = ultimaDataString[4] + "-" + 
+                ultimaDataString[3] + "-" +
+                ultimaDataString[2] + " " +
+                ultimaDataString[1] + ":" +
+                ultimaDataString[0];
+        
         NoPilha no = new NoPilha();
         
-        no.setElemento(ultimoId);
+        no.setElemento(ultimoId, data);
+        
+        //Ajustar os valores para a próxima estrutura
         ultimoId++;
+             
+        //Ajustar data
+        //Minutos
+        if (ultimaData[0] == 30){
+            ultimaData[0] = 0;
+            ultimaDataString[0] = "00";
+            
+            //Horas
+            if (ultimaData[1] == 23){
+                ultimaData[1] = 0;
+                ultimaDataString[1] = "00";
+
+                //Dias
+                if (ultimaData[2] == 30){
+                    ultimaData[2] = 1;
+                    ultimaDataString[1] = "01";
+
+                    //Mês
+                    if (ultimaData[3] == 12) {
+                        ultimaData[3] = 1;
+                        ultimaDataString[1] = "01";
+
+                        //Ano
+                        ultimaData[4] += 1;
+                        
+                    } else {
+                        ultimaData[3] += 1;
+                        verificarZero(ultimaData[3], 3);
+
+                    }
+                } else {
+                    ultimaData[2] += 1;
+                    verificarZero(ultimaData[2], 2);
+
+                }
+                
+            } else {
+                ultimaData[1] += 1;
+                verificarZero(ultimaData[1], 1);
+            }
+            
+        } else {
+            //Incrementa 30 minutos
+            ultimaData[0] += 30;
+            ultimaDataString[0] = "30";
+        }
+              
+        
         
         if(Historico == null){
             Historico =no;
@@ -34,6 +95,13 @@ public class Pilha {
             no.setAnterior(atual);           
             topo = no;
         }
+    }
+    
+    public void verificarZero(int valor, int index){
+        if (valor > 9)
+            ultimaDataString[index] = "" + ultimaData[index];
+        else
+            ultimaDataString[index] = "0" + ultimaData[index];
     }
     
     //Deletando dados do histórico (top - down)

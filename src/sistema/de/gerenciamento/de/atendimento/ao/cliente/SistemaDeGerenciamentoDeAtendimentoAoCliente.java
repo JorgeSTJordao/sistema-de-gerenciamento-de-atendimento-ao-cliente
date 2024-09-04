@@ -13,5 +13,7 @@ public class SistemaDeGerenciamentoDeAtendimentoAoCliente {
         historico.imprimir();
         historico.deletar();
         historico.imprimir();
+        historico.inserir();
+        historico.imprimir();
     }   
 }
