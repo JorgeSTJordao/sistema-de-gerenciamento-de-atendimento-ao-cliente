@@ -5,8 +5,8 @@ public class Pilha {
     private NoPilha Historico;
     private NoPilha topo;
     private int ultimoId;
-    private int[] ultimaData;
-    private String[] ultimaDataString;
+    final private int[] ultimaData; //Valor atribuído uma única vez
+    final private String[] ultimaDataString; //Valor atribuído uma única vez
     
     public Pilha(){
         this.ultimoId = 0;
