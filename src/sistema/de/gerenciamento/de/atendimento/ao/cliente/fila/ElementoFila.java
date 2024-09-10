@@ -1,48 +1,59 @@
 package sistema.de.gerenciamento.de.atendimento.ao.cliente.fila;
 
-/**
- *
- * @author jorge
- */
 public class ElementoFila {
     String id;
     String nome;
-    String servico;
-    
-    public void ElementoPilha(String descricao, String data){
-        this.nome = descricao;
-        this.servico = data;
+    String motivo;
+
+    // construtor do elemento da fila
+    public ElementoFila(String nome, String motivo) {
+        this.nome = nome;
+        this.motivo = motivo;
     }
     
-    public String getId(){
+    // retorna o id do cliente
+    public String getId() {
         return id;
     }
-    
-    public void setId(int id){
+
+    // define o id do cliente
+    public void setId(int id) {
+        
         if (id < 10){
-            this.id= "CLI00" + id;
+            this.id= "REQ00" + id;
         }
         else if (id >= 100){
-            this.id = "CLI" + id;
+            this.id = "REQ" + id;
         }
         else{
-            this.id = "CLI0" + id;
+            this.id = "REQ0" + id;
         }
     }
     
-    public String getNome(){
+    
+    // retorna o nome do cliente
+    public String getNome() {
         return nome;
     }
-    
-    public void setNome(String nome){
+
+    // define o nome do cliente
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    
-    public String getServico(){
-        return servico;
+
+
+    // retorna o motivo do atendimento
+    public String getMotivo() {
+        return motivo;
     }
-    
-    public void setServico(String servico){
-        this.servico = servico;
-    }    
+
+    // define o motivo do atendimento
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    // exibe as informacoes do cliente
+    public void mostrarElemento() {
+        System.out.println("ID: " + id +  "| Nome: " + nome + " | Motivo: " + motivo);
+    }
 }
