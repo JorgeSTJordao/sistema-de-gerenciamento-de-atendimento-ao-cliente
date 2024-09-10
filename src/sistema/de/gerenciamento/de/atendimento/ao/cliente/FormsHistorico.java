@@ -5,7 +5,7 @@ import sistema.de.gerenciamento.de.atendimento.ao.cliente.pilha.Pilha;
 
 
 public class FormsHistorico {
-    private Pilha historico;
+    final private Pilha historico;
     
     public FormsHistorico(Pilha historico){
         this.historico = historico;
