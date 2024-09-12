@@ -11,7 +11,7 @@ Ferramentas usadas durante o desenvolvimento do projeto:
 
 ## Aproveite o projeto
 
-Desenvolvido por **Jorge S. T. Jordão** & Bruno Klemz
+Desenvolvido por **Jorge S. T. Jordão** & **Bruno Klemz**
 
 <hr>
 
