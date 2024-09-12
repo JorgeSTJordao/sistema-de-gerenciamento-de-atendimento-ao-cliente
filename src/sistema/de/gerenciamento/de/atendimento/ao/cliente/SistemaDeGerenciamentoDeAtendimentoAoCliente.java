@@ -14,7 +14,7 @@ public class SistemaDeGerenciamentoDeAtendimentoAoCliente {
         FormsHistorico formsHistorico = new FormsHistorico(historico);
         FormsFilaAtendimento formsFilaAtendimento = new FormsFilaAtendimento(filaAtendimento);
 
-            //Formulário
+         //Formulário
         while(true){
             System.out.println("[1] - Histórico");
             System.out.println("[2] - Fila de atendimento");
