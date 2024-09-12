@@ -9,9 +9,10 @@ Ferramentas usadas durante o desenvolvimento do projeto:
 - Java
 - NetBeans
 
-## Aproveite o projeto
+## Colaboradores
 
-Desenvolvido por **Jorge S. T. Jordão** & **Bruno Klemz**
+| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/116199476?v=4" width=115><br><sub>Jorge Samuel</sub>](https://github.com/JorgeSTJordao) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/107573048?v=4" width=115><br><sub>Bruno Klemz</sub>](https://github.com/Klemz2701) |  
+| :---: | :---: | 
 
 <hr>
 
