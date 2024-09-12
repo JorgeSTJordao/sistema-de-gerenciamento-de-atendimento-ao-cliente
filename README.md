@@ -1,6 +1,6 @@
 # 💰 Sistema de Gerenciamento de Atendimento ao Cliente
 
-Um sistema criado utilizando Java com base em estrutura de dados 
+Um programa em Java que simula um sistema de gerenciamento de atendimento ao cliente utilizando uma lista para Implementar uma pilha e uma fila. A pilha será usada para armazenar um histórico de solicitações de serviço, enquanto a fila será usada para gerenciar a ordem de atendimento dos clientes.
 
 # 📌 Ferramentas
 
